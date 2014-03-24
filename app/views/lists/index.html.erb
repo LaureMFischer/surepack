@@ -2,6 +2,15 @@
 
 <%= button_to '+ New List', new_list_path %>
 
-<% @lists.each do |list| %>
-  <%= list.name %>
-<% end %>
+<table>
+  <tr>
+    <th>List</th>
+    <th>Pack By</th>
+  </tr>
+  <% @lists.each do |list| %>
+    <tr>
+      <td><%= list.name %></td>
+      <td><%= list.deadline_date %></td>
+    <tr>
+  <% end %>
+</table>
