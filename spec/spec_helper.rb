@@ -22,5 +22,5 @@ RSpec.configure do |config|
   config.tty = true
   config.formatter = :documentation
   config.include FactoryGirl::Syntax::Methods
-  # config.include SessionHelpers
+  config.include SessionHelpers
 end
