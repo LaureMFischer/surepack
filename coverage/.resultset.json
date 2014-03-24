@@ -1,0 +1,19 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/laurefischer/project_3/surepack/app/models/item.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/laurefischer/project_3/surepack/app/models/list.rb": [
+        1,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1395683206
+  }
+}
