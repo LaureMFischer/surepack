@@ -12,8 +12,23 @@
         1,
         1,
         null
+      ],
+      "/Users/laurefischer/project_3/surepack/app/controllers/lists_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/laurefischer/project_3/surepack/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
       ]
     },
-    "timestamp": 1395684657
+    "timestamp": 1395685203
   }
 }

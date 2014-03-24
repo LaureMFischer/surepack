@@ -4,7 +4,7 @@ feature 'Visitor signs up' do
 
   background do
     visit root_path
-    click_link 'Sign in'
+    click_button 'Sign in'
     click_link 'Sign up'
   end
 
@@ -13,8 +13,7 @@ feature 'Visitor signs up' do
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'
-    expect(page).to have_content 'Signed in as laure@gmail.com'
-    expect(page).to have_link 'Sign out'
+    expect(page).to have_content 'Welcome!'
   end
 
   scenario 'unsuccessfully because they left fields blank' do
