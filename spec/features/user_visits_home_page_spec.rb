@@ -10,6 +10,6 @@ feature 'User visits home page' do
 
   scenario 'and sees all packing lists' do
     expect(page).to have_content @list.name
+    expect(page).to have_button '+ New List'
   end
-
 end
