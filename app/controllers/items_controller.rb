@@ -4,6 +4,10 @@ class ItemsController < ApplicationController
   # All of a user's items
   def index
     @items = Item.where(user_id: current_user.id)
+    respond_to do |format|
+      format.html
+      format.json { render json: @items }
+    end
   end
 
   def new

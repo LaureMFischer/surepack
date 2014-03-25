@@ -6,5 +6,4 @@ Surepack::Application.routes.draw do
   root to: "lists#index"
 
   get '/items', to: 'items#index'
-  # post '/items', to: 'items#post_item'
 end
