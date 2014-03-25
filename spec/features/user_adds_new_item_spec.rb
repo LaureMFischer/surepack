@@ -18,5 +18,6 @@ feature 'User adds new item' do
     fill_in 'Category', with: 'Shoes'
     click_button '+ Add'
     expect(page).to have_button 'Clear'
+    expect(page).to have_content 'Boots'
   end
 end

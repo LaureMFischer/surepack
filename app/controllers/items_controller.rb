@@ -1,5 +1,10 @@
 class ItemsController < ApplicationController
-  before_action :get_list
+  before_action :get_list, only: [:create, :new]
+
+  # All of a user's items
+  def index
+    @items = Item.where(user_id: current_user.id)
+  end
 
   def new
     @item = Item.new
@@ -7,7 +12,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if !@item.save
+    if !(@list.items << @item) # Save and insert
       flash.now[:error] = @item.errors.full_messages.join(", ")
       render :new
     else
@@ -17,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def all
-    @items = Item.all
+    @items = Item.where(user_id: current_user.id)
   end
 
   private

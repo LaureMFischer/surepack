@@ -7,3 +7,9 @@
 </div>
 
 <%= @list.name %>
+
+<ul>
+<% @list.items.each do |item| %>
+  <li><%= item.item_name %></li>
+<% end %>
+</ul>
