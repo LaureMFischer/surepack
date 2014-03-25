@@ -4,10 +4,10 @@ class ItemsController < ApplicationController
   # All of a user's items
   def index
     @items = Item.where(user_id: current_user.id)
-    respond_to do |format|
-      format.html
-      format.json { render json: @items }
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @items }
+    # end
   end
 
   def new
@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
       flash.now[:error] = @item.errors.full_messages.join(", ")
       render :new
     else
+      current_user.items << @item
       flash[:success] = "Your item has been created!"
       redirect_to list_path(@list)
     end

@@ -8,7 +8,7 @@ $(document).ready(function(){
     Master.storeData(data);
   });
 
-  $('.add-existing').click(Master.renderMasterList);
+  // $('.add-existing').click(Master.renderMasterList);
 
 });
 
@@ -21,7 +21,8 @@ Master.storeData = function(data) {
 };
 
 Master.renderMasterList = function(event) {
-
+  var masterHTML;
+  masterHTML = Master.renderMasterHTML();
 };
 
 Master.addToList = function(event) {

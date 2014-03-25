@@ -2,12 +2,14 @@
 
 <div>
   <span><%= link_to '+ Add New Item', new_list_item_path(@list) %></span>
-  <button class="add-existing">+ Add Item from Existing</button>
-  <button class="clear">Clear</button>
+  <span class="add-existing"><%= link_to '+ Add Item from Existing', items_path %></span>
+  <button id="clear">Clear</button>
 </div>
 
-<ul>
+<%= form_tag("/items", :method => "post") do %>
+<ul style="list-style-type:none;">
 <% @list.items.each do |item| %>
-  <li><%= item.item_name %></li>
-<% end %>
+    <li><%= check_box_tag  "items_checkbox[]",item.id %> <%= item.item_name %></li>
+<%end%>
 </ul>
+<%end %>
