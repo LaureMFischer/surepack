@@ -15,7 +15,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    if !@list.save
+    if !(current_user.lists << @list)
       flash.now[:error] = @list.errors.full_messages.join(", ")
       render :new
     else
