@@ -1,12 +1,12 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
+  before_action :get_list, only: [:show, :update]
 
   def index
     @lists = List.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   def show
-    @list = List.find(params[:id])
   end
 
   def new
@@ -28,5 +28,9 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name, :deadline_date, :deadline_time, :user_id)
+  end
+
+  def get_list
+    @list = List.find(params[:id])
   end
 end

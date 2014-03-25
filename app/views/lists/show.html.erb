@@ -1,4 +1,4 @@
-<h1><%= @list.name %></h1>
+<h1 id="list-name" data-list-id="<%= @list.id %>" data-user-id="<%= @list.user_id %>"><%= @list.name %></h1>
   <div id="new-list">
     <div>
       <span><%= link_to '+ Add New Item', new_list_item_path(@list) %></span>
@@ -7,7 +7,7 @@
     </div>
 
     <%= form_tag("/items", :method => "post") do %>
-    <ul style="list-style-type:none;">
+    <ul style="list-style-type:none;" id="list-of-items">
       <% @list.items.each do |item| %>
         <li><%= check_box_tag "items_checkbox[]",item.id %> <%= item.item_name %></li>
       <% end %>

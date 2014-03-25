@@ -10,7 +10,6 @@ $(document).ready(function(){
   });
 
   $('#add-existing').click(Master.renderMasterList);
-  // $('.add-button').click(Master.addToList);
 
 });
 
@@ -36,23 +35,31 @@ Master.renderMasterHTML = function(items) {
 };
 
 Master.renderItemHTML = function(item) {
-  var $itemDiv = '<div>' + item.item_name + '<button class="add-button">+ Add</button></div>';
+  var $itemDiv = '<div>' + item.item_name + '<button class="add-button" id="' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></div>';
   $('#existing-list').append($itemDiv);
   $('#new-list').hide("slow");
+  $('.add-button').click(Master.addToList.bind(item));
 };
 
-// Master.addToList = function(event) {
-//   event.preventDefault();
+Master.addToList = function(event) {
+  event.preventDefault();
 
-//   $.ajax({
-//     type: 'POST',
-//     url: '/lists/' + list_id + '/items',
-//     data: { list_id: list_id, user_id: user_id }
-//   })
-//   .done(function(data){
-//     var itemHTML = '<li>' +  + '</li>';
-//     $('#new-list').append(itemHTML);
-//   });
+  var list_id = $('#list-name').attr('data-list-id'),
+    user_id = $('#list-name').attr('data-user-id'),
+    item_id = this.id,
+    item_name = this.item_name;
 
-//   return false;
-// };
+  $.ajax({
+    type: 'PATCH',
+    url: '/lists/' + list_id + '/items/' + item_id,
+    data: { list_id: list_id, user_id: user_id, item_id: item_id, item_name: item_name },
+    dataType: 'json'
+  })
+  .done(function(data){
+    var itemHTML = '<li>' + data.item_name + '</li>';
+    $('#list-of-items').append(itemHTML);
+    console.log('Post Done');
+  });
+
+  return false;
+};

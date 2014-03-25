@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :get_list, only: [:create, :new]
+  before_action :get_list, only: [:create, :new, :update]
 
   # All of a user's items
   def index
@@ -24,6 +24,12 @@ class ItemsController < ApplicationController
       flash[:success] = "Your item has been created!"
       redirect_to list_path(@list)
     end
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @list.items << @item
+    render json: @item
   end
 
   def all
