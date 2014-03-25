@@ -1,8 +1,9 @@
 <h1>All Items</h1>
 
 <div>
-  <% @items.each do |item| %>
-    <%= item.item_name %><br>
-
-  <% end %>
+  <ul>
+    <% @items.each do |item| %>
+     <li><%= item.item_name %><button id="add-button-<%= item.id %>" class="add-button">+ Add</button></li>
+    <% end %>
+  </ul>
 </div>
