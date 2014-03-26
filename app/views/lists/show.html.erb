@@ -2,7 +2,7 @@
 <h1 id="list-name" data-list-id="<%= @list.id %>" data-user-id="<%= @list.user_id %>"><%= @list.name %></h1>
   <div id="new-list">
     <div>
-      <span><%= link_to '+ Add New Item', new_list_item_path(@list) %></span>
+      <span><%= button_to '+ Add New Item', new_list_item_path(@list), :method => :get %></span>
       <button id="add-existing">+ Add Item from Existing</button>
     </div>
 

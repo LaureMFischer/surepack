@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bind_polyfill
+//= require bootstrap
 //= require_tree .
