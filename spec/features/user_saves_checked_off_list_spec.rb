@@ -13,9 +13,9 @@ feature 'User saves checked off list' do
     fill_in 'Departure Date', with: '2015-03-21'
     fill_in 'Departure Time', with: '2PM'
     click_button '+ Create List'
-    click_link '+ Add New Item'
+    click_button '+ Add New Item'
     fill_in 'Item Name', with: 'Boots'
-    fill_in 'Category', with: 'Shoes'
+    select('Shoes', :from => 'Category')
     click_button '+ Add'
     check 'items_checkbox_'
     click_button 'Save'
