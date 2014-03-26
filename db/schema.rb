@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140324172751) do
   create_table "items", force: true do |t|
     t.string   "item_name"
     t.string   "category"
+    t.boolean  "packed"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

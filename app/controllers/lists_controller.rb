@@ -27,7 +27,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :deadline_date, :deadline_time, :user_id)
+    params.require(:list).permit(:name, :deadline_date, :deadline_time, :packed, :user_id)
   end
 
   def get_list

@@ -6,4 +6,5 @@ Surepack::Application.routes.draw do
   root to: "lists#index"
 
   get '/items', to: 'items#index'
+  match '/items/packed' => 'items#packed', :via => :patch
 end

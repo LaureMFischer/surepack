@@ -15,7 +15,7 @@ feature 'User creates new list' do
     click_button '+ Create List'
     expect(page).to have_content 'Vail'
     expect(page).to have_link '+ Add New Item'
-    expect(page).to have_link '+ Add Item from Existing'
+    expect(page).to have_button '+ Add Item from Existing'
     expect(page).to have_button 'Clear'
   end
 end

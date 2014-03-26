@@ -28,10 +28,14 @@ Master.renderMasterList = function(event) {
 };
 
 Master.renderMasterHTML = function(items) {
-  var i = 0;
+  var i = 0,
+    $doneAddingButton = '<button id="done-adding-button">Done Adding</button>';
+
   for (; i < Master.items.length; i++) {
     Master.renderItemHTML(items[i]);
   }
+  $('#done-adding').append($doneAddingButton);
+  $('#done-adding-button').click(Master.hideMaster);
 };
 
 Master.renderItemHTML = function(item) {
@@ -62,4 +66,12 @@ Master.addToList = function(event) {
   });
 
   return false;
+};
+
+Master.hideMaster = function(event) {
+  var list_id = $('#list-name').attr('data-list-id');
+  event.preventDefault();
+
+  window.location.href = '/lists/' + list_id;
+  // $('#new-list').show("slow");
 };

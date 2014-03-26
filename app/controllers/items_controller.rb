@@ -36,6 +36,16 @@ class ItemsController < ApplicationController
     @items = Item.where(user_id: current_user.id)
   end
 
+  def packed
+    params[:items_checkbox].each do |check|
+      item_id = check
+      item = Item.find_by_id(item_id)
+      item.update_attribute(:packed, true)
+    end
+    redirect_to root_path
+    flash[:success] = "Your list has been saved!"
+  end
+
   private
 
   def item_params

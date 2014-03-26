@@ -19,7 +19,7 @@ feature 'User adds new item' do
     click_button '+ Add'
     expect(page).to have_button 'Clear'
     expect(page).to have_link '+ Add New Item'
-    expect(page).to have_link '+ Add Item from Existing'
+    expect(page).to have_button '+ Add Item from Existing'
     expect(page).to have_content 'Boots'
   end
 
@@ -28,7 +28,7 @@ feature 'User adds new item' do
     click_button '+ Add'
     expect(page).to have_button 'Clear'
     expect(page).to have_link '+ Add New Item'
-    expect(page).to have_link '+ Add Item from Existing'
-    expect(page).to have_content 'Crossbow'
+    expect(page).to have_button '+ Add Item from Existing'
+    expect(page).to have_content 'Boots'
   end
 end
