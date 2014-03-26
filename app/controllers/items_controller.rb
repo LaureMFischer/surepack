@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
       item = Item.find_by_id(item_id)
       item.update_attribute(:packed, true)
     end
-    redirect_to root_path
+    redirect_to :back
     flash[:success] = "Your list has been saved!"
   end
 
