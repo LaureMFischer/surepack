@@ -10,9 +10,9 @@
     <ul style="list-style-type:none;" id="list-of-items">
       <% @list.items.each do |item| %>
         <% if item.packed == true %>
-          <li style="color:grey;"> <%= check_box_tag "items_checkbox[]", item.id %><strike><%= item.item_name %></strike></li>
+          <li class="checked-off"> <%= check_box_tag "items_checkbox[]", item.id %><%= item.item_name %></li>
         <% else %>
-          <li><%= check_box_tag "items_checkbox[]", item.id %><%= item.item_name %></li>
+          <li class="not-checked-off"><%= check_box_tag "items_checkbox[]", item.id %><%= item.item_name %></li>
         <% end %>
       <% end %>
     </ul>
