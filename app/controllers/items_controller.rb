@@ -32,10 +32,6 @@ class ItemsController < ApplicationController
     render json: @item
   end
 
-  def all
-    @items = Item.where(user_id: current_user.id)
-  end
-
   def packed
     params[:items_checkbox].each do |check|
       item_id = check
@@ -43,15 +39,8 @@ class ItemsController < ApplicationController
       item.update_attribute(:packed, true)
     end
     redirect_to :back
-    flash[:success] = "Your list has been saved!"
+    flash[:notice] = "Your list has been saved!"
   end
-
-  # def unpack
-  #   @list.items.each do |item|
-  #     item.update_attribute(:packed, false)
-  #   end
-  #   redirect_to :back
-  # end
 
   private
 

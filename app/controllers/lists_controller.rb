@@ -16,10 +16,10 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     if !(current_user.lists << @list)
-      flash.now[:error] = @list.errors.full_messages.join(", ")
+      flash[:notice] = "You've already created a list with this name."
       render :new
     else
-      flash[:success] = "Your list has been created!"
+      flash[:notice] = "Your list has been created!"
       redirect_to list_path(@list)
     end
   end

@@ -23,6 +23,18 @@ feature 'User adds new item' do
     expect(page).to have_content 'Boots'
   end
 
+  scenario 'unsuccessfully because the item name is a duplicate' do
+    click_link '+ Add New Item'
+    fill_in 'Item Name', with: 'Boots'
+    fill_in 'Category', with: 'Shoes'
+    click_button '+ Add'
+    click_link '+ Add New Item'
+    fill_in 'Item Name', with: 'Boots'
+    fill_in 'Category', with: 'Shoes'
+    click_button '+ Add'
+    expect(page).to have_content "You've already created this item!"
+  end
+
   scenario 'from existing items' do
     click_button '+ Add Item from Existing'
     click_button '+ Add'
