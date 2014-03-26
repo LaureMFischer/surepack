@@ -21,6 +21,7 @@ feature 'User adds new item' do
     expect(page).to have_link '+ Add New Item'
     expect(page).to have_button '+ Add Item from Existing'
     expect(page).to have_content 'Boots'
+    expect(page).to have_content "Your item has been created!"
   end
 
   scenario 'unsuccessfully because the item name is a duplicate' do

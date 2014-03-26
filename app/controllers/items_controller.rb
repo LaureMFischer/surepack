@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
     else
       current_user.items << @item
       redirect_to list_path(@list)
-      flash[:success] = "Your item has been created!"
+      flash[:notice] = "Your item has been created!"
     end
   end
 
