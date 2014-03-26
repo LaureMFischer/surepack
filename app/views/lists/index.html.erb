@@ -9,7 +9,7 @@
   </tr>
   <% @lists.each do |list| %>
     <tr>
-      <td><%= list.name %></td>
+      <td><%= link_to list.name, list_path(list.id) %></td>
       <td><%= list.deadline_date %></td>
     <tr>
   <% end %>

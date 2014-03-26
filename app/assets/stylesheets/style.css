@@ -6,3 +6,7 @@
 .added-from-existing {
   color: gray;
 }
+
+#existing-list {
+  display: none;
+}

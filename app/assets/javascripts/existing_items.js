@@ -74,6 +74,7 @@ Master.renderItemHTML = function(item) {
   var $itemDiv = '<div>' + item.item_name + '<button class="add-button" id="add-button-' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></div>';
   $('#' + item.category).append($itemDiv);
   $('#new-list').hide("slow");
+  $('#existing-list').show("slow");
   $('#add-button-' + item.id).click(Master.addToList.bind(item));
 };
 
