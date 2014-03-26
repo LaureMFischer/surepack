@@ -6,7 +6,7 @@ $(document).ready(function(){
   })
   .done(function(data) {
     Master.storeData(data);
-    console.log("Done")
+    console.log("Done");
   });
 
   $('#add-existing').click(Master.renderMasterList);

@@ -17,12 +17,12 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if !(@list.items << @item) # Save and insert
-      flash.now[:error] = @item.errors.full_messages.join(", ")
+      flash[:notice] = "You've already created this item!"
       render :new
     else
       current_user.items << @item
-      flash[:success] = "Your item has been created!"
       redirect_to list_path(@list)
+      flash[:success] = "Your item has been created!"
     end
   end
 

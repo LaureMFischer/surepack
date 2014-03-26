@@ -5,6 +5,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/laurefischer/project_3/surepack/app/models/list.rb": [
@@ -38,6 +39,13 @@
         3,
         3,
         null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
         null,
         null,
         1,
@@ -107,6 +115,13 @@
         0,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         null,
         1,
@@ -120,6 +135,6 @@
         null
       ]
     },
-    "timestamp": 1395838739
+    "timestamp": 1395848037
   }
 }
