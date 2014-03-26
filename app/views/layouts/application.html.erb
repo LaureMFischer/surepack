@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -24,7 +25,7 @@
   </div>
 </nav>
 
-<p class="notice"><%= notice %></p>
+<p class="notice bg-success"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
 <%= yield %>
