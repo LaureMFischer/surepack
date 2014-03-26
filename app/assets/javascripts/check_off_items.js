@@ -1,5 +1,5 @@
 // $(document).ready(function(){
-//   $('#items_checkbox_5').change(CheckOffItems.saveListChecks);
+//   $('#items_checkbox_').change(CheckOffItems.saveListChecks);
 // });
 
 // var CheckOffItems = CheckOffItems || {

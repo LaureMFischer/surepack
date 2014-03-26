@@ -46,6 +46,13 @@ class ItemsController < ApplicationController
     flash[:success] = "Your list has been saved!"
   end
 
+  # def unpack
+  #   @list.items.each do |item|
+  #     item.update_attribute(:packed, false)
+  #   end
+  #   redirect_to :back
+  # end
+
   private
 
   def item_params

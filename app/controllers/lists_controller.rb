@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_list, only: [:show, :update]
+  before_action :get_list, only: [:show, :update, :unpack]
 
   def index
     @lists = List.where(user_id: current_user.id).order(created_at: :desc)
@@ -24,10 +24,17 @@ class ListsController < ApplicationController
     end
   end
 
+  def unpack
+    @list.items.each do |item|
+      item.update_attribute(:packed, false)
+    end
+    redirect_to :back
+  end
+
   private
 
   def list_params
-    params.require(:list).permit(:name, :deadline_date, :deadline_time, :packed, :user_id)
+    params.require(:list).permit(:name, :deadline_date, :deadline_time, :user_id)
   end
 
   def get_list
