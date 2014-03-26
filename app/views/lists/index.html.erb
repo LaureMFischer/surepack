@@ -1,16 +1,19 @@
-<h1>Packing Lists</h1>
+<div class="container">
 
-<%= link_to '+ New List', new_list_path %>
+  <h1>Packing Lists</h1>
 
-<table>
-  <tr>
-    <th>List</th>
-    <th>Pack By</th>
-  </tr>
-  <% @lists.each do |list| %>
+  <%= link_to '+ New List', new_list_path %>
+
+  <table>
     <tr>
-      <td><%= link_to list.name, list_path(list.id) %></td>
-      <td><%= list.deadline_date %></td>
-    <tr>
-  <% end %>
-</table>
+      <th>List</th>
+      <th>Pack By</th>
+    </tr>
+    <% @lists.each do |list| %>
+      <tr>
+        <td><%= link_to list.name, list_path(list.id) %></td>
+        <td><%= list.deadline_date %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

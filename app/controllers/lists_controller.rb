@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_list, only: [:show, :update, :unpack]
+  before_action :get_list, only: [:show, :update, :unpack, :edit, :update]
 
   def index
     @lists = List.where(user_id: current_user.id).order(created_at: :desc)
@@ -25,6 +25,20 @@ class ListsController < ApplicationController
     else
       flash[:notice] = "Your list has been created!"
       redirect_to list_path(@list)
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    @list.assign_attributes(list_params)
+    if @list.save
+      flash[:notice] = 'Updated the list!'
+      redirect_to list_path(@list)
+    else
+      flash.now[:errors] = @list.errors.full_messages
+      render :edit
     end
   end
 
