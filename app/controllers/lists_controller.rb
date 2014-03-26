@@ -7,6 +7,10 @@ class ListsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @list.items }
+    end
   end
 
   def new

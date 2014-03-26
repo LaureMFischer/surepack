@@ -11,28 +11,71 @@ $(document).ready(function(){
 
   $('#add-existing').click(Master.renderMasterList);
 
+  var items = Master.items,
+    list_id = $('#list-name').attr('data-list-id');
+
+  $.ajax({
+    url: '/lists/' + list_id,
+    type: 'GET',
+    dataType: 'json'
+  })
+  .done(function(data) {
+    Master.storeCurrentListItems(data);
+    console.log("Got current list items");
+  });
 });
 
 var Master = Master || {
-  items: []
+  items: [],
+  itemNames: [],
+  currentListItems: [],
+  currentListItemNames: []
 };
 
 Master.storeData = function(data) {
   Master.items = data;
+  var i = 0;
+  for (; i < data.length; i++) {
+    Master.itemNames.push(data[i].item_name);
+  }
+};
+
+Master.storeCurrentListItems = function (data) {
+  Master.currentListItems = data;
+
+  var i = 0;
+  for (; i < data.length; i++) {
+    Master.currentListItemNames.push(data[i].item_name);
+  }
 };
 
 Master.renderMasterList = function(event) {
   event.preventDefault();
   var items = Master.items;
+  //   list_id = $('#list-name').attr('data-list-id');
+
+  // $.ajax({
+  //   url: '/lists/' + list_id,
+  //   type: 'GET',
+  //   dataType: 'json'
+  // })
+  // .done(function(data) {
+  //   Master.storeCurrentListItems(data);
+  //   console.log("Got current list items");
+  // });
+
   Master.renderMasterHTML(items);
 };
 
 Master.renderMasterHTML = function(items) {
   var i = 0,
-    $doneAddingButton = '<button id="done-adding-button">Done Adding</button>';
+    $doneAddingButton = '<button id="done-adding-button">Done Adding</button>',
+    list_id = $('#list-name').attr('data-list-id');
 
-  for (; i < Master.items.length; i++) {
-    Master.renderItemHTML(items[i]);
+  for (; i < items.length; i++) {
+    if(Master.currentListItemNames.indexOf(items[i].item_name) === -1) {
+      Master.renderItemHTML(items[i]);
+    }
   }
   $('#done-adding').append($doneAddingButton);
   $('#done-adding-button').click(Master.hideMaster);
