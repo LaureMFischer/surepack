@@ -5,7 +5,8 @@
   <div class="form-input"><%= form.text_field :item_name, placeholder: "Item Name" %></div>
 
   <div class="form-label"><%= form.label :category, "Category" %></div>
-  <div class="form-input"><%= form.text_field :category, placeholder: "Category" %></div>
+  <div class="form-input"><%= form.collection_select :category, Item::CATEGORIES, :to_s, :to_s,
+       :include_blank => true %></div>
 
   <%= form.submit "+ Add" %>
 <% end %>

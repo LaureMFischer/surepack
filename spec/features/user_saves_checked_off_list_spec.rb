@@ -20,6 +20,5 @@ feature 'User saves checked off list' do
     check 'items_checkbox_'
     click_button 'Save'
     expect(page).to have_content 'Your list has been saved!'
-
   end
 end
