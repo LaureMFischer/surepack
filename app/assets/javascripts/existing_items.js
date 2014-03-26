@@ -39,10 +39,10 @@ Master.renderMasterHTML = function(items) {
 };
 
 Master.renderItemHTML = function(item) {
-  var $itemDiv = '<div>' + item.item_name + '<button class="add-button" id="' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></div>';
+  var $itemDiv = '<div>' + item.item_name + '<button class="add-button" id="add-button-' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></div>';
   $('#existing-list').append($itemDiv);
   $('#new-list').hide("slow");
-  $('.add-button').click(Master.addToList.bind(item));
+  $('#add-button-' + item.id).click(Master.addToList.bind(item));
 };
 
 Master.addToList = function(event) {
