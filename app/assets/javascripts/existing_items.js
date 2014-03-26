@@ -52,17 +52,6 @@ Master.storeCurrentListItems = function (data) {
 Master.renderMasterList = function(event) {
   event.preventDefault();
   var items = Master.items;
-  //   list_id = $('#list-name').attr('data-list-id');
-
-  // $.ajax({
-  //   url: '/lists/' + list_id,
-  //   type: 'GET',
-  //   dataType: 'json'
-  // })
-  // .done(function(data) {
-  //   Master.storeCurrentListItems(data);
-  //   console.log("Got current list items");
-  // });
 
   Master.renderMasterHTML(items);
 };
@@ -83,7 +72,7 @@ Master.renderMasterHTML = function(items) {
 
 Master.renderItemHTML = function(item) {
   var $itemDiv = '<div>' + item.item_name + '<button class="add-button" id="add-button-' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></div>';
-  $('#existing-list').append($itemDiv);
+  $('#' + item.category).append($itemDiv);
   $('#new-list').hide("slow");
   $('#add-button-' + item.id).click(Master.addToList.bind(item));
 };
