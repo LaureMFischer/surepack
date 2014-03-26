@@ -2,3 +2,7 @@
   color: gray;
   text-decoration: line-through;
 }
+
+.added-from-existing {
+  color: gray;
+}

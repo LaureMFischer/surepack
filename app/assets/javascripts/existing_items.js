@@ -62,6 +62,7 @@ Master.addToList = function(event) {
   .done(function(data){
     var itemHTML = '<li>' + data.item_name + '</li>';
     $('#list-of-items').append(itemHTML);
+    $('#add-button-' + item_id).hide();
     console.log('Post Done');
   });
 
