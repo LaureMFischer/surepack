@@ -1,11 +1,9 @@
 <div class="container">
   <%= link_to '< All Lists', lists_path %>
-  <h1 id="list-name" data-list-id="<%= @list.id %>" data-user-id="<%= @list.user_id %>"><%= @list.name %></h1>
+  <h2 id="list-name" data-list-id="<%= @list.id %>" data-user-id="<%= @list.user_id %>"><%= @list.name %></h2>
     <div id="new-list">
-      <div>
-        <span><%= button_to '+ Add New Item', new_list_item_path(@list), :method => :get, class: "btn btn-primary btn-md" %></span>
-        <button id="add-existing" class="btn btn-primary btn-md">+ Add Item from Existing</button>
-      </div>
+      <%= button_to '+ Add New Item', new_list_item_path(@list), :method => :get, class: "btn btn-primary btn-sm" %>
+      <button id="add-existing" class="btn btn-primary btn-sm">+ Add Item from Existing</button>
 
       <%= form_tag("/items/packed", :method => "patch") do %>
       <ul style="list-style-type:none;" id="list-of-items">

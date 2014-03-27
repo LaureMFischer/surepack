@@ -19,13 +19,6 @@ body {
 
 }
 
-/*ul.nav.navbar-nav {
-  margin-right: 0;
-  margin-left: 0;
-  margin-bottom: 0;
-  margin-top: 0;
-}*/
-
 #sign-out {
   float: right;
 }
@@ -43,7 +36,7 @@ body {
 }
 
 .nav-bar {
-  background-color: #29BDC4;
+  background-color: #33CCCC;
   font-size: 17px;
   height: 50px;
   padding-top: 5px;
@@ -53,13 +46,6 @@ body {
   display: inline-block;
   font-size: 80%;
   padding: 0 10px;
-/*  a {
-    text-decoration: none;
-    color: #ecf0f1;
-    &:hover {
-      color: #bdc3c7;
-    }
-  }*/
 }
 
 .nav-ul {
@@ -80,13 +66,30 @@ a:hover {
   color: white;
   margin-right: 0;
   width: 100px;
+  font-size: 20px;
+}
+
+.app-name a {
+  font-size: 20px;
 }
 
 /*.nav-ul li a:link {
   color:white;
 }*/
 
-input {
+#list_name {
+  width: 200px;
+}
+
+#list_deadline_date {
+  width: 200px;
+}
+
+#list_deadline_time {
+  width: 200px;
+}
+
+#item_item_name {
   width: 200px;
 }
 
@@ -111,6 +114,19 @@ input {
 }
 
 .list-link a {
-  color: #29BDC4;
+  color: #33CCCC;
   margin-right: 15px;
+}
+
+#user_remember_me {
+  width: 20px;
+}
+
+#items_checkbox_ {
+  width: 20px;
+}
+
+.btn.btn-primary {
+  background-color: #FF9640;
+  border-color: #FF9640;
 }
