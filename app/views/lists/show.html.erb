@@ -1,7 +1,8 @@
 <h2 id="list-name" data-list-id="<%= @list.id %>" data-user-id="<%= @list.user_id %>"><%= @list.name %></h2>
+<%= link_to 'Edit', edit_list_path(@list) %>
   <div id="new-list">
-    <%= button_to '+ New Item', new_list_item_path(@list), :method => :get, class: "btn btn-primary btn-sm" %>
-    <button id="add-existing" class="btn btn-primary btn-sm">+ Add Item</button>
+    <%= button_to '+ New Item', new_list_item_path(@list), :method => :get, class: "btn btn-primary btn-md" %>
+    <button id="add-existing" class="btn btn-primary btn-md">+ Add Item</button>
 
     <%= form_tag("/items/packed", :method => "patch") do %>
     <ul style="list-style-type:none;" id="list-of-items">
@@ -14,9 +15,9 @@
       <% end %>
     </ul>
     <div id="blue-buttons">
-      <%= submit_tag("Save", class: "btn btn-primary btn-sm save-checks") %>
+      <%= submit_tag("Save", class: "btn btn-primary btn-md save-checks") %>
       <% end %>
-      <%= button_to "Clear", @list.id.to_s + '/unpack', :method => :patch, class: "btn btn-primary btn-sm clear-checks" %>
+      <%= button_to "Clear", @list.id.to_s + '/unpack', :method => :patch, class: "btn btn-primary btn-md clear-checks" %>
     </div>
   </div>
 <div id="existing-list">

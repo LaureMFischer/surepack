@@ -170,17 +170,18 @@ th {
   width: 240px;
 }
 
-.btn.btn-primary.btn-sm.save-checks {
+.btn.btn-primary.btn-md.save-checks {
   background-color: #4671D5;
   border-color: #4671D5;
-}
-
-.btn.btn-primary.btn-sm.clear-checks {
-  background-color: #4671D5;
-  border-color: #4671D5;
-}
-
-#blue-buttons {
   display: inline-block;
 }
 
+.btn.btn-primary.btn-md.clear-checks {
+  background-color: #4671D5;
+  border-color: #4671D5;
+  display: inline-block;
+}
+
+.button_to {
+  display: inline-block;
+}
