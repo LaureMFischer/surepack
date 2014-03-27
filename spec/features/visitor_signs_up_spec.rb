@@ -4,7 +4,6 @@ feature 'Visitor signs up' do
 
   background do
     visit root_path
-    click_button 'Sign in'
     click_link 'Sign up'
   end
 
