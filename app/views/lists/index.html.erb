@@ -1,10 +1,10 @@
 <h1>Packing Lists</h1>
 
+<% if @lists.empty? %>
+  <p>You don't have any packing lists yet.</p>
+<% end %>
+
 <table>
-  <tr>
-    <th>List</th>
-    <th>Pack By</th>
-  </tr>
   <% @lists.each do |list| %>
     <tr>
       <td><%= link_to list.name, list_path(list.id) %></td>
