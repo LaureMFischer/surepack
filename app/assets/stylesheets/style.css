@@ -102,7 +102,7 @@ a:hover {
 }
 
 #new-item-form {
-  margin-left: 43px;
+  margin-left: 27px;
 }
 
 #list-table {
@@ -169,13 +169,11 @@ th {
 .btn.btn-primary.btn-md.save-checks {
   background-color: #4671D5;
   border-color: #4671D5;
-  display: inline-block;
 }
 
 .btn.btn-primary.btn-md.clear-checks {
   background-color: #4671D5;
   border-color: #4671D5;
-  display: inline-block;
 }
 
 .button_to {
