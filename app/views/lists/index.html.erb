@@ -1,7 +1,7 @@
-<h2 class="text-center">Packing Lists</h2>
+<h2>Packing Lists</h2>
 
 <% if @lists.empty? %>
-  <p>You don't have any packing lists yet.</p>
+  <p class="text-center">You don't have any packing lists yet.</p>
 <% end %>
 
 <div id="list-table-div">
@@ -14,5 +14,5 @@
     <% end %>
   </table>
 
-  <%= button_to '+ New List', new_list_path, :method => :get, class: "btn btn-primary btn-md" %>
+  <%= button_to '+ New List', new_list_path, :method => :get, class: "btn btn-primary btn-md new" %>
 </div>

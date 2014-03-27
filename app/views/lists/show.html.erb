@@ -1,39 +1,53 @@
-<div class="container">
-  <%= link_to '< All Lists', lists_path %>
-  <h2 id="list-name" data-list-id="<%= @list.id %>" data-user-id="<%= @list.user_id %>"><%= @list.name %></h2>
-    <div id="new-list">
-      <%= button_to '+ Add New Item', new_list_item_path(@list), :method => :get, class: "btn btn-primary btn-sm" %>
-      <button id="add-existing" class="btn btn-primary btn-sm">+ Add Item from Existing</button>
+<h2 id="list-name" data-list-id="<%= @list.id %>" data-user-id="<%= @list.user_id %>"><%= @list.name %></h2>
+  <div id="new-list">
+    <%= button_to '+ Add New Item', new_list_item_path(@list), :method => :get, class: "btn btn-primary btn-sm" %>
+    <button id="add-existing" class="btn btn-primary btn-sm">+ Add Item from Existing</button>
 
-      <%= form_tag("/items/packed", :method => "patch") do %>
-      <ul style="list-style-type:none;" id="list-of-items">
-        <% @list.items.each do |item| %>
-          <% if item.packed == true %>
-            <li class="checked-off"><%= item.item_name %></li>
-          <% else %>
-            <li class="not-checked-off"><%= check_box_tag "items_checkbox[]", item.id %><%= item.item_name %></li>
-          <% end %>
+    <%= form_tag("/items/packed", :method => "patch") do %>
+    <ul style="list-style-type:none;" id="list-of-items">
+      <% @list.items.each do |item| %>
+        <% if item.packed == true %>
+          <li class="checked-off"><%= item.item_name %></li>
+        <% else %>
+          <li class="not-checked-off"><%= check_box_tag "items_checkbox[]", item.id %><%= item.item_name %></li>
         <% end %>
-      </ul>
-      <div id="save-list" ><%= submit_tag("Save", class: "btn btn-primary btn-sm") %></div>
       <% end %>
-      <%= button_to "Clear", @list.id.to_s + '/unpack', :method => :patch, class: "btn btn-primary btn-sm" %>
-    </div>
-  <div id="existing-list">
-    <h3>Clothing</h3>
-    <div id="Clothing"></div>
-    <h3>Accessories</h3>
-    <div id="Accessories"></div>
-    <h3>Shoes</h3>
-    <div id="Shoes"></div>
-    <h3>Toiletries</h3>
-    <div id="Toiletries"></div>
-    <h3>Electronics</h3>
-    <div id="Electronics"></div>
-    <h3>Miscellaneous</h3>
-    <div id="Miscellaneous"></div>
-    <div id="done-adding">
-    </div>
+    </ul>
+    <div id="save-list" ><%= submit_tag("Save", class: "btn btn-primary btn-sm") %></div>
+    <% end %>
+    <%= button_to "Clear", @list.id.to_s + '/unpack', :method => :patch, class: "btn btn-primary btn-sm" %>
   </div>
-
+<div id="existing-list">
+  <table id="Clothing">
+    <tr>
+      <th>Clothing</th>
+    </tr>
+  </table>
+  <table id="Accessories">
+    <tr>
+      <th>Accessories</th>
+    </tr>
+  </table>
+  <table id="Shoes">
+    <tr>
+      <th>Shoes</th>
+    </tr>
+  </table>
+  <table id="Toiletries">
+    <tr>
+      <th>Toiletries</th>
+    </tr>
+  </table>
+  <table id="Electronics">
+    <tr>
+      <th>Electronics</th>
+    </tr>
+  </table>
+  <table id="Miscellaneous">
+    <tr>
+      <th>Miscellaneous</th>
+    </tr>
+  </table>
+  <div id="done-adding">
+  </div>
 </div>

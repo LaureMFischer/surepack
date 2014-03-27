@@ -73,7 +73,7 @@ Master.renderMasterHTML = function(items) {
 };
 
 Master.renderItemHTML = function(item) {
-  var $itemDiv = '<div class="existing-items"><span class="existing-item-name">' + item.item_name + '</span><button class="add-button btn btn-primary btn-xs" id="add-button-' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></div>';
+  var $itemDiv = '<tr class="existing-items"><td class="existing-item-name">' + item.item_name + '</td><td><button class="add-button btn btn-primary btn-xs" id="add-button-' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></td></tr>';
   $('#' + item.category).append($itemDiv);
   $('#new-list').hide("slow");
   $('#existing-list').show("slow");

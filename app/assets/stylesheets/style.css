@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-
+  margin-left: 20px;
 }
 
 #sign-out {
@@ -98,7 +98,7 @@ a:hover {
 }
 
 #new-form {
-  margin-left: 43px;
+  margin-left: 27px;
 }
 
 #edit-form {
@@ -109,12 +109,8 @@ a:hover {
   margin-left: 43px;
 }
 
-#list-table-div {
-  margin-left: 43px;
-}
-
 #list-table {
-  font-size: 17px;
+  font-size: 22px;
 }
 
 .list-link a {
@@ -151,6 +147,25 @@ a:hover {
   margin-left: 15px;
 }
 
-.existing-item-name {
+td.existing-item-name {
   margin-top: 10px;
+  padding-left: 15px;
+  font-size: 17px;
+  width: 160px;
+}
+
+.btn.btn-primary.btn-md.new {
+  width: 240px;
+}
+
+.btn.btn-primary.btn-md.create-list {
+  width: 200px;
+}
+
+th {
+  font-size: 20px;
+}
+
+#new_list {
+  width: 240px;
 }
