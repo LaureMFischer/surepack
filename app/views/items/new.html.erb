@@ -8,5 +8,5 @@
   <div class="form-input"><%= form.collection_select :category, Item::CATEGORIES, :to_s, :to_s,
        :include_blank => true %></div>
 
-  <%= form.submit "+ Add" %>
+  <%= form.submit "+ Add", class: "btn btn-primary btn-md" %>
 <% end %>

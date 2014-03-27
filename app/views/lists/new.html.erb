@@ -1,12 +1,14 @@
+
+
 <%= form_for @list do |form| %>
   <div class="form-label"><%= form.label :name, "List Name" %></div>
-  <div class="form-input"><%= form.text_field :name, placeholder: "List Name" %></div>
+  <div class="form-input"><%= form.text_field :name, placeholder: "Where are you headed?" %></div>
 
   <div class="form-label"><%= form.label :deadline_date, "Departure Date" %></div>
-  <div class="form-input"><%= form.text_field :deadline_date, placeholder: "Departure Date" %></div>
+  <div class="form-input"><%= form.text_field :deadline_date, placeholder: "When do you leave?" %></div>
 
   <div class="form-label"><%= form.label :deadline_time, "Departure Time" %></div>
-  <div class="form-input"><%= form.text_field :deadline_time, placeholder: "Departure Time" %></div>
+  <div class="form-input"><%= form.text_field :deadline_time, placeholder: "Packing deadline?" %></div>
 
-  <%= form.submit "+ Create List" %>
+  <%= form.submit "+ Create List", class: "btn btn-primary btn-md" %>
 <% end %>

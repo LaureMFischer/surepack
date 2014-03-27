@@ -3,8 +3,8 @@
   <h1 id="list-name" data-list-id="<%= @list.id %>" data-user-id="<%= @list.user_id %>"><%= @list.name %></h1>
     <div id="new-list">
       <div>
-        <span><%= button_to '+ Add New Item', new_list_item_path(@list), :method => :get %></span>
-        <button id="add-existing">+ Add Item from Existing</button>
+        <span><%= button_to '+ Add New Item', new_list_item_path(@list), :method => :get, class: "btn btn-primary btn-md" %></span>
+        <button id="add-existing" class="btn btn-primary btn-md">+ Add Item from Existing</button>
       </div>
 
       <%= form_tag("/items/packed", :method => "patch") do %>
@@ -17,9 +17,9 @@
           <% end %>
         <% end %>
       </ul>
-      <div id="save-list"><%= submit_tag("Save") %></div>
+      <div id="save-list" ><%= submit_tag("Save", class: "btn btn-primary btn-md") %></div>
       <% end %>
-      <%= button_to "Clear", @list.id.to_s + '/unpack', :method => :patch %>
+      <%= button_to "Clear", @list.id.to_s + '/unpack', :method => :patch, class: "btn btn-primary btn-md" %>
     </div>
   <div id="existing-list">
     <h2>Clothing</h2>
