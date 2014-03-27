@@ -73,10 +73,6 @@ a:hover {
   font-size: 20px;
 }
 
-/*.nav-ul li a:link {
-  color:white;
-}*/
-
 #list_name {
   width: 200px;
 }
@@ -184,4 +180,9 @@ th {
 
 .button_to {
   display: inline-block;
+}
+
+.edit-link {
+  color: #33CCCC;
+  font-size: 17px;
 }
