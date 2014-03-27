@@ -8,28 +8,25 @@
   <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="container">
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div id="navbar-container">
-    <ul class="nav navbar-nav">
-      <% if user_signed_in? %>
-        <li><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></li>
-      <% else %>
-        <li><%= link_to('Sign in', new_user_session_path) %></li>
-      <% end %>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li>Test</li>
-    </ul>
-  </div>
-</nav>
+  <body>
+    <div class="nav-bar">
+      <nav>
+        <ul class="nav-ul">
+          <% if user_signed_in? %>
+            <li id="sign-out"><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></li>
+          <% else %>
+            <li id="sign-in"><%= link_to('Sign in', new_user_session_path) %></li>
+          <% end %>
+          <li id="new-list-link"><%= link_to('+ New List', new_list_path) %></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
 
-<p class="notice bg-success"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+      <p class="notice bg-success"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
-<%= yield %>
-</div>
-
-</body>
+      <%= yield %>
+    </div>
+  </body>
 </html>
