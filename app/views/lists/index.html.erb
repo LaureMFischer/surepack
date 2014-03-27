@@ -1,16 +1,19 @@
-<h1>Packing Lists</h1>
+<h1 class="text-center">Packing Lists</h1>
 
 <% if @lists.empty? %>
   <p>You don't have any packing lists yet.</p>
 <% end %>
 
-<table>
-  <% @lists.each do |list| %>
-    <tr>
-      <td><%= link_to list.name, list_path(list.id) %></td>
-      <td><%= list.deadline_date %></td>
-    </tr>
-  <% end %>
-</table>
+<div id="list-table-div">
+  <table id="list-table">
+    <% @lists.each do |list| %>
+      <tr>
+        <td class="list-link"><%= link_to list.name, list_path(list.id) %></td>
+        <td><%= list.deadline_date %></td>
+        <td><%= list.deadline_time %></td>
+      </tr>
+    <% end %>
+  </table>
 
-<%= button_to '+ New List', new_list_path, :method => :get, class: "btn btn-primary btn-md" %>
+  <%= button_to '+ New List', new_list_path, :method => :get, class: "btn btn-primary btn-md" %>
+</div>

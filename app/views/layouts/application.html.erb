@@ -13,10 +13,10 @@
       <nav>
         <ul class="nav-ul">
           <% if user_signed_in? %>
+            <li class="app-name"><%= link_to('SurePack', lists_path) %></li>
             <li id="sign-out"><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></li>
-            <li id="new-list-link"><%= link_to('+ New List', new_list_path) %></li>
           <% else %>
-            <span id="app-name">SurePack</span>
+            <span class="app-name">SurePack</span>
             <li id="sign-up"><%= link_to('Sign up', new_user_registration_path) %></li>
           <% end %>
         </ul>

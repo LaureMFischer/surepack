@@ -27,15 +27,15 @@ body {
 }*/
 
 #sign-out {
-  float: left;
-}
-
-#new-list-link {
   float: right;
 }
 
-#sign-in {
+#new-list-link {
   float: left;
+}
+
+#sign-in {
+  float: right;
 }
 
 #sign-up {
@@ -76,7 +76,7 @@ a:hover {
   text-decoration: none;
 }
 
-#app-name {
+.app-name {
   color: white;
   margin-right: 0;
   width: 100px;
@@ -88,4 +88,29 @@ a:hover {
 
 input {
   width: 200px;
+}
+
+#item_category {
+  width: 200px;
+}
+
+#new-form {
+  margin-left: 43px;
+}
+
+#edit-form {
+  margin-left: 43px;
+}
+
+#new-item-form {
+  margin-left: 43px;
+}
+
+#list-table-div {
+  margin-left: 43px;
+}
+
+.list-link a {
+  color: #29BDC4;
+  margin-right: 15px;
 }

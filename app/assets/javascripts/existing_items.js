@@ -58,7 +58,7 @@ Master.renderMasterList = function(event) {
 
 Master.renderMasterHTML = function(items) {
   var i = 0,
-    $doneAddingButton = '<button id="done-adding-button">Done Adding</button>',
+    $doneAddingButton = '<button id="done-adding-button" class="btn btn-primary btn-md">Done Adding</button>',
     list_id = $('#list-name').attr('data-list-id');
 
   for (; i < items.length; i++) {
@@ -71,7 +71,7 @@ Master.renderMasterHTML = function(items) {
 };
 
 Master.renderItemHTML = function(item) {
-  var $itemDiv = '<div>' + item.item_name + '<button class="add-button" id="add-button-' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></div>';
+  var $itemDiv = '<div>' + item.item_name + '<button class="add-button btn btn-primary btn-sm" id="add-button-' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></div>';
   $('#' + item.category).append($itemDiv);
   $('#new-list').hide("slow");
   $('#existing-list').show("slow");
