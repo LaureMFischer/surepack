@@ -15,9 +15,9 @@
           <% end %>
         <% end %>
       </ul>
-      <div id="save-list" ><%= submit_tag("Save", class: "btn btn-primary btn-md") %></div>
+      <div id="save-list" ><%= submit_tag("Save", class: "btn btn-primary btn-sm") %></div>
       <% end %>
-      <%= button_to "Clear", @list.id.to_s + '/unpack', :method => :patch, class: "btn btn-primary btn-md" %>
+      <%= button_to "Clear", @list.id.to_s + '/unpack', :method => :patch, class: "btn btn-primary btn-sm" %>
     </div>
   <div id="existing-list">
     <h3>Clothing</h3>
@@ -32,9 +32,8 @@
     <div id="Electronics"></div>
     <h3>Miscellaneous</h3>
     <div id="Miscellaneous"></div>
-  </div>
-
-  <div id="done-adding">
+    <div id="done-adding">
+    </div>
   </div>
 
 </div>

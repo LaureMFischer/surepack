@@ -54,6 +54,8 @@ Master.renderMasterList = function(event) {
   var items = Master.items;
 
   Master.renderMasterHTML(items);
+
+  return false;
 };
 
 Master.renderMasterHTML = function(items) {
@@ -71,7 +73,7 @@ Master.renderMasterHTML = function(items) {
 };
 
 Master.renderItemHTML = function(item) {
-  var $itemDiv = '<div>' + item.item_name + '<button class="add-button btn btn-primary btn-sm" id="add-button-' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></div>';
+  var $itemDiv = '<div class="existing-items"><span class="existing-item-name">' + item.item_name + '</span><button class="add-button btn btn-primary btn-xs" id="add-button-' + item.id + '" data-item-name="' + item.item_name + '">+ Add</button></div>';
   $('#' + item.category).append($itemDiv);
   $('#new-list').hide("slow");
   $('#existing-list').show("slow");

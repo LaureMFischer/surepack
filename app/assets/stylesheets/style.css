@@ -113,6 +113,10 @@ a:hover {
   margin-left: 43px;
 }
 
+#list-table {
+  font-size: 17px;
+}
+
 .list-link a {
   color: #33CCCC;
   margin-right: 15px;
@@ -129,4 +133,24 @@ a:hover {
 .btn.btn-primary {
   background-color: #FF9640;
   border-color: #FF9640;
+  margin-top: 10px;
+}
+
+#list-of-items {
+  padding-left: 10px;
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+.btn.btn-primary.btn-xs {
+  margin-left: 10px;
+  margin-top: 0;
+}
+
+.existing-items {
+  margin-left: 15px;
+}
+
+.existing-item-name {
+  margin-top: 10px;
 }
