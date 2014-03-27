@@ -33,13 +33,18 @@ class ItemsController < ApplicationController
   end
 
   def packed
-    params[:items_checkbox].each do |check|
-      item_id = check
-      item = Item.find_by_id(item_id)
-      item.update_attribute(:packed, true)
+    if params[:items_checkbox]
+      params[:items_checkbox].each do |check|
+        item_id = check
+        item = Item.find_by_id(item_id)
+        item.update_attribute(:packed, true)
+      end
+      redirect_to :back
+      flash[:notice] = "Your list has been saved!"
+    else
+      redirect_to :back
+      flash[:notice] = "You haven't checked anything off yet. Start packing!"
     end
-    redirect_to :back
-    flash[:notice] = "Your list has been saved!"
   end
 
   private
