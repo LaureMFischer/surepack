@@ -24,16 +24,4 @@ feature 'User adds new item' do
     expect(page).to have_content "Your item has been created!"
   end
 
-  scenario 'unsuccessfully because the item name is a duplicate' do
-    click_button '+ New Item'
-    fill_in 'Item Name', with: 'Boots'
-    select('Shoes', :from => 'Category')
-    click_button '+ Add'
-    click_button '+ New Item'
-    fill_in 'Item Name', with: 'Boots'
-    select('Shoes', :from => 'Category')
-    click_button '+ Add'
-    expect(page).to have_content "You've already created this item!"
-  end
-
 end
