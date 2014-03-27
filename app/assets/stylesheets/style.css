@@ -169,3 +169,18 @@ th {
 #new_list {
   width: 240px;
 }
+
+.btn.btn-primary.btn-sm.save-checks {
+  background-color: #4671D5;
+  border-color: #4671D5;
+}
+
+.btn.btn-primary.btn-sm.clear-checks {
+  background-color: #4671D5;
+  border-color: #4671D5;
+}
+
+#blue-buttons {
+  display: inline-block;
+}
+

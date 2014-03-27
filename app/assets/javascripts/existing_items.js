@@ -109,5 +109,4 @@ Master.hideMaster = function(event) {
   event.preventDefault();
 
   window.location.href = '/lists/' + list_id;
-  // $('#new-list').show("slow");
 };
