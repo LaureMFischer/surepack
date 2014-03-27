@@ -20,7 +20,7 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     if !(current_user.lists << @list)
-      flash[:notice] = "You've already created a list with this name."
+      flash[:alert] = "You've already created a list with this name."
       render :new
     else
       flash[:notice] = "Your list has been created!"
