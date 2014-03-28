@@ -17,9 +17,9 @@ feature 'User adds new item' do
     fill_in 'Item Name', with: 'Boots'
     select('Shoes', :from => 'Category')
     click_button '+ Add'
-    expect(page).to have_button 'Clear'
+    expect(page).to have_button 'Reset'
     expect(page).to have_button '+ New Item'
-    expect(page).to have_button '+ Add Item'
+    expect(page).to have_button '+ Add from Existing'
     expect(page).to have_content 'Boots'
     expect(page).to have_content "Your item has been created!"
   end

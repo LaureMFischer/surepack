@@ -15,8 +15,8 @@ feature 'User creates new list' do
     click_button '+ Create List'
     expect(page).to have_content 'Vail'
     expect(page).to have_button '+ New Item'
-    expect(page).to have_button '+ Add Item'
-    expect(page).to have_button 'Clear'
+    expect(page).to have_button '+ Add from Existing'
+    expect(page).to have_button 'Reset'
   end
 
   scenario 'unsuccessfully because the list name is a duplicate' do
