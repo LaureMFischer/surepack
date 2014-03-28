@@ -9,7 +9,7 @@
     <% @lists.each do |list| %>
       <tr>
         <td class="list-link"><%= link_to list.name, list_path(list.id) %></td>
-        <td><%= list.parse_date %> </td>
+        <td class="list-date"><%= list.parse_date %> </td>
       </tr>
     <% end %>
   </table>

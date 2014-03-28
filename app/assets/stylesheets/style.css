@@ -151,7 +151,7 @@ td.existing-item-name {
 }
 
 .btn.btn-primary.btn-md.new {
-  width: 255px;
+  width: 230px;
 }
 
 .btn.btn-primary.btn-md.create-list {
@@ -182,5 +182,9 @@ th {
 
 .edit-link {
   color: #33CCCC;
+  font-size: 17px;
+}
+
+.list-date {
   font-size: 17px;
 }
