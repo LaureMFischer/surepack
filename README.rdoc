@@ -1,3 +1,9 @@
 == SurePack
 
+I built this application in four days, as my final project for General Assembly's Web Development Immersive course.
+
+This app was inspired by the realization that I often find myself writing the very same packing list over and over on a scrap of paper, for each trip I take. It's not a very efficient system, and I often worry that I've left something important behind. It was a particularly silly system for when I was traveling every week for my consulting job, packing essentially the same exact items, but creating a new packing list every time.
+
+Surepack aims to solve this problem, as a mobile-friendly app that allows users to create packing lists for their trips, check things off as they pack, and reuse a list for future trips. Never worry that you forgot something again!
+
 
