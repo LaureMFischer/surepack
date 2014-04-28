@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-03-27T21:10:17-04:00">2014-03-27T21:10:17-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-04-28T12:59:47-04:00">2014-04-28T12:59:47-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -561,7 +561,7 @@
         <li class="covered" data-hits="3" data-linenumber="19">
           <span class="hits">3</span>
           
-          <code class="ruby">    if !(@list.items &lt;&lt; @item) # Save and insert</code>
+          <code class="ruby">    if !(@list.items &lt;&lt; @item) # Save and insert into the list</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="20">
@@ -705,7 +705,7 @@
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">      flash[:notice] = &quot;Your list has been saved!&quot;</code>
+          <code class="ruby">      flash[:notice] = &quot;Your list has been saved!&quot; # Saving the list updates any checked off items, packed attribute becomes true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
@@ -1233,7 +1233,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_uniqueness_of :item_name, scope: :user_id</code>
+          <code class="ruby">  validates_uniqueness_of :item_name, scope: :user_id # Prevents a user from creating the same item more than once</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -1293,7 +1293,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_uniqueness_of :name, scope: :user_id</code>
+          <code class="ruby">  validates_uniqueness_of :name, scope: :user_id # Prevents user from creating a list with the same name more than once</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -1305,7 +1305,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  def parse_date</code>
+          <code class="ruby">  def parse_date # Function to format the date field</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="7">

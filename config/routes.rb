@@ -6,6 +6,6 @@ Surepack::Application.routes.draw do
   root to: "lists#index"
 
   get '/items', to: 'items#index'
-  match '/items/packed' => 'items#packed', :via => :patch
-  match '/lists/:id/unpack' => 'lists#unpack', :via => :patch
+  match '/items/packed' => 'items#packed', :via => :patch # For saving a list after some items have been checked off
+  match '/lists/:id/unpack' => 'lists#unpack', :via => :patch # For clearing a list to reuse it later
 end

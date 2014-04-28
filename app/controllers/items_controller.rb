@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if !(@list.items << @item) # Save and insert
+    if !(@list.items << @item) # Save and insert into the list
       flash[:alert] = "You've already created this item!"
       render :new
     else
@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
         item.update_attribute(:packed, true)
       end
       redirect_to :back
-      flash[:notice] = "Your list has been saved!"
+      flash[:notice] = "Your list has been saved!" # Saving the list updates any checked off items, packed attribute becomes true
     else
       redirect_to :back
       flash[:notice] = "You haven't checked anything off yet. Start packing!"
