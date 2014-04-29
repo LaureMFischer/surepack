@@ -3,7 +3,7 @@ class ListsController < ApplicationController
   before_action :get_list, only: [:show, :update, :unpack, :edit, :update]
 
   def index
-    @lists = List.where(user_id: current_user.id).order(created_at: :desc)
+    @lists = current_user.lists.order(created_at: :desc)
   end
 
   def show
